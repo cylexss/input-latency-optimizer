@@ -2,11 +2,11 @@
 # Usage (normal PowerShell window):
 #   irm https://raw.githubusercontent.com/cylexss/input-latency-optimizer/main/install.ps1 | iex
 #
-# Downloads the app to %TEMP% and starts it with an admin prompt.
+# Downloads the app from the latest GitHub release to %TEMP% and starts it with an admin prompt.
 # Wrapped in & { } so nothing leaks into (or closes) the PowerShell window you ran it from.
 & {
     $ErrorActionPreference = 'Stop'
-    $url  = 'https://raw.githubusercontent.com/cylexss/input-latency-optimizer/main/InputLatencyOptimizer.ps1'
+    $url  = 'https://github.com/cylexss/input-latency-optimizer/releases/latest/download/InputLatencyOptimizer.ps1'
     $file = Join-Path $env:TEMP 'InputLatencyOptimizer.ps1'
 
     [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
